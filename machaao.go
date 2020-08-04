@@ -10,21 +10,21 @@ import (
 	"os"
 )
 
-//MachaaoAPIToken Get MachaaoAPIToken from https://portal.messengerx.io
+// Get MachaaoAPIToken from https://portal.messengerx.io
 var MachaaoAPIToken string = os.Getenv("MachaaoAPIToken")
 
-//WitAPIToken Get WitAPIToken from https://wit.ai
+// Get WitAPIToken from https://wit.ai
 var WitAPIToken string = os.Getenv("WitAPIToken")
 
-//MachaaoBaseURL for dev, use https://ganglia-dev.machaao.com
+// for dev, use https://ganglia-dev.machaao.com
 var MachaaoBaseURL string = os.Getenv("MachaaoBaseURL")
 
-//MessageHandler This function handles messages
-//MessageHandler Input parameters (http.ResponseWriter, *http.Request)
+// This function handles messages
+// Input parameters (http.ResponseWriter, *http.Request)
 type MessageHandler func(http.ResponseWriter, *http.Request)
 
-//Server Starts server at given PORT. WebHook is machaao_hook
-//Server input message handler type function(http.ResponseWriter, *http.Request)
+// Starts server at given PORT. WebHook is machaao_hook
+// input message handler type function(http.ResponseWriter, *http.Request)
 func Server(handler MessageHandler) {
 	port := GetPort()
 
@@ -49,7 +49,7 @@ func Server(handler MessageHandler) {
 
 }
 
-//SendPostReq Send post request
+// Sends post request to MessengerX.io API
 func SendPostReq(apiURL string, body interface{}) (*http.Response, error) {
 
 	var url string = MachaaoBaseURL + "/" + apiURL
@@ -85,7 +85,7 @@ func SendPostReq(apiURL string, body interface{}) (*http.Response, error) {
 	return resp, nil
 }
 
-//SendGetReq Send get request
+// Sends get request to MessengerX.io API
 func SendGetReq(apiURL string) (*http.Response, error) {
 
 	var url string = MachaaoBaseURL + "/" + apiURL
@@ -117,7 +117,7 @@ func SendGetReq(apiURL string) (*http.Response, error) {
 	return resp, nil
 }
 
-//GetPort Set PORT as env var or leave it to use 4747
+// Set PORT as env var or leave it to use 4747
 func GetPort() string {
 	port := os.Getenv("PORT")
 	if port == "" {

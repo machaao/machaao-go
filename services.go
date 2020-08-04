@@ -9,35 +9,35 @@ import (
 	witai "github.com/wit-ai/wit-go"
 )
 
-//SendAnnouncement Send a subscription message announcement to a tag or a timezone
+// Send a subscription message announcement to a tag or a timezone
 func SendAnnouncement(body interface{}) (*http.Response, error) {
 	var apiURL string = "v1/messages/announce"
 
 	return SendPostReq(apiURL, body)
 }
 
-//SendMessage Send a standard message to a single user id or multiple user id
+// Send a standard message to a single user id or multiple user id
 func SendMessage(body interface{}) (*http.Response, error) {
 	var apiURL string = "v1/messages/send"
 
 	return SendPostReq(apiURL, body)
 }
 
-//AddContent Insert or update content for your bot
+// Insert or update content for your bot
 func AddContent(body interface{}) (*http.Response, error) {
 	var apiURL string = "v1/content"
 
 	return SendPostReq(apiURL, body)
 }
 
-//TagUser Tag or Un-tag a specific userId
+// Tag or Un-tag a specific userId
 func TagUser(userID string, body interface{}) (*http.Response, error) {
 	var apiURL string = "v1/users/tag/" + userID
 
 	return SendPostReq(apiURL, body)
 }
 
-//GetUserProfile Get basic profile of the user
+// Get basic profile of the user
 func GetUserProfile(userID string) (*http.Response, error) {
 	var apiURL string = "v1/users/" + userID
 
@@ -83,7 +83,7 @@ func SearchContent(query string) (*http.Response, error) {
 	return resp, nil
 }
 
-//SearchContentViaSlug Get content for your bot via an unique slug
+// Get content for your bot via an unique slug
 func SearchContentViaSlug(slug string) (*http.Response, error) {
 
 	var urlAPI string = MachaaoBaseURL + "v1/content/" + slug
