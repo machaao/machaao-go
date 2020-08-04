@@ -91,7 +91,7 @@ func SearchContentViaSlug(slug string) (*http.Response, error) {
 	return SendGetReq(urlAPI)
 }
 
-//WitAIResponse Get reponse for the input message
+//WitAIResponse Get response for the input message
 func WitAIResponse(message string) (*witai.MessageResponse, error) {
 	client := witai.NewClient(WitAPIToken)
 	// Use client.SetHTTPClient() to set custom http.Client
