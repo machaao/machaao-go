@@ -1,6 +1,7 @@
 # machaao-go
 
-![MessengerX logo](https://www.messengerx.io/img/logo.png)
+![MessengerX logo](https://www.messengerx.io/img/logo.png)  
+
 machaao-go is a [go](https://golang.org) (or 'golang' for search engine friendliness) based library for building chatbot using [MessengerX](https://messengerx.io) APIs.
 
 *This repository is community-maintained. We gladly accept pull requests. Please see the  [Machaao API Docs](https://ganglia.machaao.com/api-docs/#/) for all supported endpoints.*
