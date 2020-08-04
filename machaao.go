@@ -28,14 +28,14 @@ type MessageHandler func(http.ResponseWriter, *http.Request)
 func Server(handler MessageHandler) {
 	port := GetPort()
 
-	if WitAPIToken == "" {
-		log.Fatalln("Wit API Token not initialised.")
-	}
 	if MachaaoAPIToken == "" {
-		log.Fatalln("Machaao API Token not initialised.")
+		log.Fatalln("[ERROR] Machaao API Token not initialised.")
 	}
 	if MachaaoBaseURL == "" {
-		log.Fatalln("Machaao Base URL not initialised.")
+		log.Fatalln("[ERROR] Machaao Base URL not initialised.")
+	}
+	if WitAPIToken == "" {
+		log.Println("[WARNING] Wit API Token not initialised.")
 	}
 
 	//API handler function

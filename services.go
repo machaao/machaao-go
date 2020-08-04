@@ -5,6 +5,8 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+
+	witai "github.com/wit-ai/wit-go"
 )
 
 //SendAnnouncement Send a subscription message announcement to a tag or a timezone
@@ -87,4 +89,16 @@ func SearchContentViaSlug(slug string) (*http.Response, error) {
 	var urlAPI string = MachaaoBaseURL + "v1/content/" + slug
 
 	return SendGetReq(urlAPI)
+}
+
+//WitAIResponse Get reponse for the input message
+func WitAIResponse(message string) (*witai.MessageResponse, error) {
+	client := witai.NewClient(WitAPIToken)
+	// Use client.SetHTTPClient() to set custom http.Client
+
+	msg, err := client.Parse(&witai.MessageRequest{
+		Query: message,
+	})
+
+	return msg, err
 }
