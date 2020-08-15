@@ -3,8 +3,6 @@ package machaao
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -72,17 +70,7 @@ func SendPostReq(apiURL string, body interface{}) (*http.Response, error) {
 	client := &http.Client{}
 	resp, err2 := client.Do(req)
 
-	if err2 != nil {
-		log.Println(err2)
-		return nil, err2
-	}
-	defer resp.Body.Close()
-
-	fmt.Println("response Status:", resp.Status)
-	bodyf, _ := ioutil.ReadAll(resp.Body)
-	fmt.Println("response Body:", string(bodyf))
-
-	return resp, nil
+	return resp, err2
 }
 
 // Sends get request to MessengerX.io API
@@ -104,17 +92,7 @@ func SendGetReq(apiURL string) (*http.Response, error) {
 	client := &http.Client{}
 	resp, err2 := client.Do(req)
 
-	if err2 != nil {
-		log.Println(err2)
-		return nil, err2
-	}
-	defer resp.Body.Close()
-
-	fmt.Println("response Status:", resp.Status)
-	bodyf, _ := ioutil.ReadAll(resp.Body)
-	fmt.Println("response Body:", string(bodyf))
-
-	return resp, nil
+	return resp, err2
 }
 
 // Set PORT as env var or leave it to use 4747
