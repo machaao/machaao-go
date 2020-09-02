@@ -2,7 +2,7 @@
 
 ![MessengerX logo](https://www.messengerx.io/img/logo.png)  
 
-[![GoDoc](https://godoc.org/github.com/machaao/machaao-go?status.svg)](https://godoc.org/github.com/machaao/machaao-go) [![Go Report Card](https://goreportcard.com/badge/github.com/machaao/machaao-go)](https://goreportcard.com/report/github.com/machaao/machaao-go) 
+[![GoDoc](https://godoc.org/github.com/machaao/machaao-go?status.svg)](https://godoc.org/github.com/machaao/machaao-go) [![Go Report Card](https://goreportcard.com/badge/github.com/machaao/machaao-go)](https://goreportcard.com/report/github.com/machaao/machaao-go) [![Gitter](https://badges.gitter.im/messengerx-io/community.svg)](https://gitter.im/messengerx-io/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) 
 
 machaao-go is a [go](https://golang.org) (or 'golang' for search engine friendliness) based library for building chatbot using [MessengerX](https://messengerx.io) APIs.
 
