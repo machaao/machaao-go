@@ -70,7 +70,22 @@ func messageHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
+	
+	
+### **Models**
 
+	1. Bot
+	2. ContentResponse
+	3. ContentRequest
+	4. User
+	5. Element
+	6. QuickReply
+	7. Button
+	8. CoreMessage
+	9. PayLoad
+	10. MachaaoAnnounceMessage
+	11. MachaaoStandardMessage
+	12. Tag
 	//Do Something
 }
 
